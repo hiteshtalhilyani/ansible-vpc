@@ -1,4 +1,4 @@
 bastion_ami: ami-022d03f649d12a49d
 region: ap-south-1
-MYIP: '92.97.21.163/32'
+MYIP: 92.97.21.163/32
 
