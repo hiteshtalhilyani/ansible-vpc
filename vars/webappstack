@@ -6,5 +6,5 @@ rmq_ami: ami-03a933af70fa97ad2
 
 region: "ap-south-1"
 
-webapplb-sg: webapplb-sg
-webapp-sg: webapp-sg
+webapplb-sg: webapplb_sg
+webapp-sg: webapp_sg
