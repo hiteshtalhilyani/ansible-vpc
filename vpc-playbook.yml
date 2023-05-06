@@ -96,5 +96,15 @@
             az: "{{zone3}}"
         register: private_sub3_out
 
+
+      - name: Create Internet gateway with tags for {{vpc_name}}
+        ec2_vpc_igw:
+            vpc_id: "{{vpcout.vpc.id}}"
+            state: "{{state}}"
+            region: "{{region}}"
+            tags:
+                Tag1: "{{vpc_igw_tag}}"
+        register: igw_out
+
     
         
