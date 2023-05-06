@@ -40,7 +40,7 @@
 
     - name: Create Webapp EC2  Security Group 
       ec2_group:
-              name: webappstack-sg
+              name: ec2webappstack-sg
               description: Webapp EC2 Security Group 
               vpc_id: "{{vpcid}}"
               region: "{{region}}"
@@ -56,7 +56,7 @@
                 from_port: 22
                 to_port: 22
                 group_id: "{{BastionSGid}}"
-                rule_desc: allow port 22 from Elastic LB        
+                rule_desc: allow port 22 from Bastion Host      
       register: ec2webappsg_out  
 
     - name: Update Webapp EC2  Security Group 
@@ -69,7 +69,7 @@
               rules:
               - proto: all
                 group_id: "{{ec2webappsg_out.group_id}}"
-                rule_desc: allow all ports from Elastic LB
+                rule_desc: allow all ports within in the security group
 
 
 
