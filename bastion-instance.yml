@@ -44,11 +44,12 @@
       - name: Create Bastion Host in Public Subnet
         ec2:
           key_name: "webapp-ssh-key"
-          vpc_subnet_id: "{{pubsub1id}}"
+          region: "{{region}}"
           instance_type: t2.micro
-          image_id: "{{bastion_ami}}"
+          image: "{{bastion_ami}}"
           wait: yes
           wait_timeout: 300
+          vpc_subnet_id: "{{pubsub1id}}"
           instance_tags:
             Name: "Bastion_Host"
             Project: Webapp
