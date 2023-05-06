@@ -26,7 +26,7 @@
 
     - name: Create Load Balancer Security Group 
       ec2_group:
-              name: "{{ webapplb-sg }}"
+              name: "{{webapplb-sg}}"
               description: Webapp Loadbalancer Security Group 
               vpc_id: "{{vpcid}}"
               region: "{{region}}"
