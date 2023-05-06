@@ -59,6 +59,19 @@
                 rule_desc: allow port 22 from Elastic LB
               
       register: ec2webappsg_out  
+      - name: Update Webapp EC2  Security Group 
+        ec2_group:
+              name: "{{ webapp-sg }}"
+              description: Allow all ports within the security group
+              vpc_id: "{{vpcid}}"
+              region: "{{region}}"
+              purge_rules: no
+              rules:
+              - proto: all
+                group_id: "{{ec2webappsg_out.group_id}}"
+                rule_desc: allow all ports from Elastic LB
+
+
 
     
         
