@@ -42,8 +42,7 @@
         register: BastionSG_out
 
       - name: Create Bastion Host in Public Subnet
-        ec2_instance:
-          name: "basionec2"
+        ec2:
           key_name: "webapp-ssh-key"
           vpc_subnet_id: "{{pubsub1id}}"
           instance_type: t2.micro
