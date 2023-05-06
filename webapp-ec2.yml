@@ -56,11 +56,11 @@
                 from_port: 22
                 to_port: 22
                 group_id: "{{BastionSGid}}"
-                rule_desc: allow port 22 from Elastic LB
-              
+                rule_desc: allow port 22 from Elastic LB        
       register: ec2webappsg_out  
-      - name: Update Webapp EC2  Security Group 
-        ec2_group:
+
+    - name: Update Webapp EC2  Security Group 
+      ec2_group:
               name: "{{ webapp-sg }}"
               description: Allow all ports within the security group
               vpc_id: "{{vpcid}}"
