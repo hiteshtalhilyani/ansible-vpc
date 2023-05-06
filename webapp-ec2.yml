@@ -11,16 +11,16 @@
       include_vars:  vars/webappstack
 
     - name: Create Webapp EC2 Key 
-        ec2_key:
-                name: webappec2_keypair
-                region: "{{region}}"
+      ec2_key:
+              name: webappec2_keypair
+              region: "{{region}}"
         register: webappkey_out
 
     - name: Save Webapp EC2 private key in ppk format
         copy:
-                content: "{{webappkey_out.key.private_key}}"
-                dest: "./webapp-key.ppk"
-                mode: 0600
+              content: "{{webappkey_out.key.private_key}}"
+              dest: "./webapp-key.ppk"
+              mode: 0600
         when: webappkey_out.changed
 
     
