@@ -25,3 +25,9 @@ state: present
 vpc_igw_tag: hkt_vpc_igw
 public_rt_tag: public_routetable
 private_rt_tag: private_RT
+
+
+# Bastion Host
+bastion_ami: ami-022d03f649d12a49d
+MYIP: 92.97.21.163/32
+bastion_sg: bastion-sg
