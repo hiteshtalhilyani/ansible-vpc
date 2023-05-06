@@ -55,7 +55,7 @@
               - proto: tcp
                 from_port: 22
                 to_port: 22
-                group_id: "{{BastionSG_out.group_id}}"
+                group_id: "{{BastionSGid}}"
                 rule_desc: allow port 22 from Elastic LB
               
       register: ec2webappsg_out  
