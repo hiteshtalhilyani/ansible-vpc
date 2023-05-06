@@ -17,11 +17,11 @@
       register: webappkey_out
 
     - name: Save Webapp EC2 private key in ppk format
-        copy:
+      copy:
               content: "{{webappkey_out.key.private_key}}"
               dest: "./webapp-key.ppk"
               mode: 0600
-        when: webappkey_out.changed
+      when: webappkey_out.changed
 
     
         
