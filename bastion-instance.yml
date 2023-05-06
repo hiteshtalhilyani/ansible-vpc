@@ -43,7 +43,7 @@
 
       - name: Create Bastion Host in Public Subnet
         ec2:
-          key_name: "webapp-ssh-key"
+          key_name: "bastion_keypair"
           region: "{{region}}"
           instance_type: t2.micro
           image: "{{bastion_ami}}"
