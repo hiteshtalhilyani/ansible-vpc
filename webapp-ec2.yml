@@ -14,7 +14,7 @@
       ec2_key:
               name: webappec2_keypair
               region: "{{region}}"
-        register: webappkey_out
+      register: webappkey_out
 
     - name: Save Webapp EC2 private key in ppk format
         copy:
