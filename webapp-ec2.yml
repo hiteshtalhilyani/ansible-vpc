@@ -226,7 +226,7 @@
             mode: '0400'
 
     - name: Insert/Update Inventory file provsion-stack/inventory-webapp
-        blockinfile:
+      blockinfile:
           path: provsion-stack/inventory-webapp
           block: |
             web01 ansible_hosts={{web01_out.tagged_instances[0].private_ip}}
