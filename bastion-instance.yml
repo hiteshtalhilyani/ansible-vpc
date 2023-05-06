@@ -24,7 +24,7 @@
         copy:
                 content: "{{bastion_keyout.key.private_key}}"
                 dest: ./bastion_privkey.pem
-          when: bastion_keyout.changed
+                when: bastion_keyout.changed
 
       - name: Create Security Group 
         ec2_security_group:
