@@ -30,4 +30,7 @@
             map_public: yes
             az: "{{zone1}}"
         register: pubsub1_out
+
+      - debug: 
+          var: pubsub1_out
         
