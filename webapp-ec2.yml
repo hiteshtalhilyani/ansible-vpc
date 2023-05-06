@@ -193,13 +193,13 @@
     # Create an ALB and attach a listener
     - local_action:
         module: ec2_elb_lb
-        name: myalb
+        name: "webap-elb"
         region: "{{region}}"
         state: present
         instance_ids: 
           - "{{web01_out.tagged_instances[0].id}}"
-        purge_instances_ids: true
-        security_groups_ids: "{{lbsg_out.group_id}}"
+        purge_instance_ids: true
+        security_group_ids: "{{lbsg_out.group_id}}"
         subnets:
           - "{{pubsub1id}}"
           - "{{pubsub2id}}"
