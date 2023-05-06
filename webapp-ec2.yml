@@ -71,8 +71,8 @@
                 group_id: "{{ec2webappsg_out.group_id}}"
                 rule_desc: allow all ports within in the security group
 
-      - name: Create web01 NGINX Host in Private Subnet
-        ec2:
+    - name: Create web01 NGINX Host in Private Subnet
+      ec2:
           key_name: "webappec2_keypair"
           region: "{{region}}"
           instance_type: t2.micro
