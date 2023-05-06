@@ -55,7 +55,7 @@
             az: "{{zone3}}"
         register: pubsub3_out
       
-        - debug: 
+      - debug: 
           var: pubsub3_out
 
       - name: Create private VPC Subnet1 in zone - {{zone1}}
