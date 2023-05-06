@@ -143,7 +143,7 @@
             subnets:
               - "{{ private_sub1_out.subnet.id }}"
               - "{{ private_sub2_out.subnet.id }}"
-              - "{{ private_sub1_out.subnet.id }}"
+              - "{{ private_sub3_out.subnet.id }}"
             routes:
               - dest: 0.0.0.0/0
                 gateway_id: "{{ NATGW_out.nat_gateway_id }}"
