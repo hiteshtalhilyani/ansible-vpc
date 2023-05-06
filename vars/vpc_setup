@@ -23,3 +23,4 @@ state: present
 
 # Tags
 vpc_igw_tag: hkt_vpc_igw
+public_rt_tag: public_routetable

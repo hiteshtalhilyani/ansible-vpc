@@ -97,7 +97,7 @@
         register: private_sub3_out
 
 
-      - name: Create Internet gateway with tags for {{vpc_name}}
+      - name: Create Internet gateway for {{vpc_name}}
         ec2_vpc_igw:
             vpc_id: "{{vpcout.vpc.id}}"
             state: "{{state}}"
@@ -105,6 +105,21 @@
             tags:
                 Tag1: "{{vpc_igw_tag}}"
         register: igw_out
+
+      - name: Set up public subnet route table 
+        amazon.aws.ec2_vpc_route_table:
+            vpc_id: "{{vpcout.vpc.id}}"
+            region: "{{region}}"
+            tags:
+              Name: "{{public_rt_tag}}"
+            subnets:
+              - "{{ pubsub1_out.subnet.id }}"
+              - "{{ pubsub2_out.subnet.id }}"
+              - "{{ pubsub3_out.subnet.id }}"
+            routes:
+              - dest: 0.0.0.0/0
+                gateway_id: "{{ igw_out.gateway_id }}"
+        register: public_route_table
 
     
         
