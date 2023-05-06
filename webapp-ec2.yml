@@ -61,7 +61,7 @@
 
     - name: Update Webapp EC2  Security Group 
       ec2_group:
-              name: webappstack-sg
+              name: ec2webappstack-sg
               description: Allow all ports within the security group
               vpc_id: "{{vpcid}}"
               region: "{{region}}"
