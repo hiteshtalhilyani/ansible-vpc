@@ -190,6 +190,25 @@
       debug: 
         var: mysql01_out
 
+    # Create an ALB and attach a listener
+    - local_action:
+        module: ec2_elb_lb
+        name: myalb
+        region: "{{region}}"
+        state: present
+        instance_ids: 
+          - "{{web01_out.tagged_instances[0].id}}"
+        purge_instances_ids: true
+        security_groups_ids: "{{lbsg_out.group_id}}"
+        subnets:
+          - "{{pubsub1id}}"
+          - "{{pubsub2id}}"
+          - "{{pubsub3id}}"
+        listeners:
+          - Protocol: HTTP # Required. The protocol for connections from clients to the load balancer (HTTP or HTTPS) (case-sensitive).
+            load_balancer_port: 80
+            instance_port: 80
+
 
 
 
