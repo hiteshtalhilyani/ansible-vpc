@@ -21,13 +21,13 @@
       
       - name: Create public VPC
         ec2_vpc_subnet:
-          vpc_id: "{{vpcout.vpc.id}}"
-          cidr: "{{PubSub1Cidr}}"
-          region: "{{region}}"
-          state: "{{state}}"
-          resource_tags: 
-            Name: webapp-pubsub1
-          map_public_ip_on_launch: yes
-          az: "{{zone1}}"
+            vpc_id: "{{vpcout.vpc.id}}"
+            cidr: "{{PubSub1Cidr}}"
+            region: "{{region}}"
+            state: "{{state}}"
+            resource_tags: 
+              Name: webapp-pubsub1
+            map_public: yes
+            az: "{{zone1}}"
         register: pubsub1_out
         
