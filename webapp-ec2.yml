@@ -95,7 +95,7 @@
         register: web01_out
     
     - name: Create Tomcat App01 Host in Private Subnet
-        ec2:
+      ec2:
           key_name: "webappec2_keypair"
           region: "{{region}}"
           instance_type: t2.micro
@@ -118,7 +118,7 @@
         register: app01_out
 
     - name: Create Memcache Host in Private Subnet
-        ec2:
+      ec2:
           key_name: "webappec2_keypair"
           region: "{{region}}"
           instance_type: t2.micro
@@ -141,7 +141,7 @@
         register: mc01_out
 
     - name: Create RabbitMQ Host in Private Subnet
-        ec2:
+      ec2:
           key_name: "webappec2_keypair"
           region: "{{region}}"
           instance_type: t2.micro
@@ -164,7 +164,7 @@
         register: rmq01_out
 
     - name: Create MYSQL Host in Private Subnet
-        ec2:
+      ec2:
           key_name: "webappec2_keypair"
           region: "{{region}}"
           instance_type: t2.micro
