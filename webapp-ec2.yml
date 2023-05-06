@@ -92,7 +92,7 @@
             Owner: Hitesh
             Environment: Testing
           group_id: "{{ec2webappsg_out.group_id}}"
-        register: web01_out
+      register: web01_out
     
     - name: Create Tomcat App01 Host in Private Subnet
       ec2:
@@ -115,7 +115,7 @@
             Owner: Hitesh
             Environment: Testing
           group_id: "{{ec2webappsg_out.group_id}}"
-        register: app01_out
+      register: app01_out
 
     - name: Create Memcache Host in Private Subnet
       ec2:
@@ -138,7 +138,7 @@
             Owner: Hitesh
             Environment: Testing
           group_id: "{{ec2webappsg_out.group_id}}"
-        register: mc01_out
+      register: mc01_out
 
     - name: Create RabbitMQ Host in Private Subnet
       ec2:
@@ -161,7 +161,7 @@
             Owner: Hitesh
             Environment: Testing
           group_id: "{{ec2webappsg_out.group_id}}"
-        register: rmq01_out
+      register: rmq01_out
 
     - name: Create MYSQL Host in Private Subnet
       ec2:
@@ -184,7 +184,7 @@
             Owner: Hitesh
             Environment: Testing
           group_id: "{{ec2webappsg_out.group_id}}"
-        register: mysql01_out
+      register: mysql01_out
 
     - name: Print Output of MYSQL EC2
       debug: 
