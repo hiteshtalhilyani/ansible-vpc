@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+vpcid:vpc-0bd3485f718efb275
+ pubsub1id: subnet-0c46b8c8b477e47c5
+ pubsub2id: subnet-0806914d711ddaacd
+ pubsub3id: subnet-0c46b8c8b477e47c5
+ privsub1id: subnet-0aaee53fcd3aeeb99
+ privsub2id: subnet-09ec98a777ec401b0
+ privsub3id:  subnet-07b0b2e8ae6a1d0a2
+ igw1id: igw-05a88ac4468a2b7c8
+ pubrt1id: rtb-091216f79aaf68ee3
+ natgwid: nat-07d855bd14e99ec27
+ privrt1id: rtb-03241033664f9e2d7
+=======
 vpcid:    vpc-0bd3485f718efb275
 pubsub1id: subnet-0c46b8c8b477e47c5
 pubsub2id: subnet-0806914d711ddaacd
@@ -8,3 +21,4 @@ privsub3id:  subnet-07b0b2e8ae6a1d0a2
 igw1id: igw-05a88ac4468a2b7c8
 pubrt1id: rtb-091216f79aaf68ee3
 natgwid: nat-07d855bd14e99ec27
+>>>>>>> 1994c4860ece35d5a741993618483feb0aaa75f5
