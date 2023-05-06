@@ -210,7 +210,7 @@
             instance_port: 80
 
     - name: Insert/Update Host IPs & name  in provision-stack/group_vars/hostips
-        blockinfile:
+      blockinfile:
           path: provision-stack/group_vars/hostips
           block: |
             web01_ip: {{web01_out.tagged_instances[0].private_ip}}
@@ -220,7 +220,7 @@
             db01_ip: {{mysql01_out.tagged_instances[0].private_ip}}
 
     - name: Copy Login Key to provision_stack directory
-        copy: 
+      copy: 
             src: webapp-key.ppk
             dest: provision-stack/webapp-key.ppk
             mode: '0400'
