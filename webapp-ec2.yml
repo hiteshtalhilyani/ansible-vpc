@@ -23,6 +23,43 @@
               mode: 0600
       when: webappkey_out.changed
 
+
+    - name: Create Load Balancer Security Group 
+      ec2_group:
+              name: "{{ webapplb-sg }}"
+              description: Webapp Loadbalancer Security Group 
+              vpc_id: "{{vpcid}}"
+              region: "{{region}}"
+              rules:
+              - proto: tcp
+                from_port: 80
+                to_port: 80
+                cidr_ip: 0.0.0.0/0
+                rule_desc: allow port 80 from anywhere and within the security group
+      register: lbsg_out
+
+    - name: Create Webapp EC2  Security Group 
+      ec2_group:
+              name: "{{ webapp-sg }}"
+              description: Webapp EC2 Security Group 
+              vpc_id: "{{vpcid}}"
+              region: "{{region}}"
+              purge_rules: no
+              rules:
+              - proto: tcp
+                from_port: 80
+                to_port: 80
+                group_id: "{{lbsg_out.group_id}}"
+                rule_desc: allow port 80 from Elastic LB
+
+              - proto: tcp
+                from_port: 22
+                to_port: 22
+                group_id: "{{BastionSG_out.group_id}}"
+                rule_desc: allow port 22 from Elastic LB
+              
+      register: ec2webappsg_out  
+
     
         
 
