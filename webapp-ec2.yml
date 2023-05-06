@@ -205,7 +205,7 @@
           - "{{pubsub2id}}"
           - "{{pubsub3id}}"
         listeners:
-          - Protocol: HTTP # Required. The protocol for connections from clients to the load balancer (HTTP or HTTPS) (case-sensitive).
+          - protocol: http # Required. The protocol for connections from clients to the load balancer (HTTP or HTTPS) (case-sensitive).
             load_balancer_port: 80
             instance_port: 80
 
