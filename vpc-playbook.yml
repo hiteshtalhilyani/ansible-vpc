@@ -82,7 +82,7 @@
             az: "{{zone2}}"
         register: private_sub2_out
    
-      - name: Create private VPC Subnet3 zone- {{zone2}}
+      - name: Create private VPC Subnet3 zone- {{zone3}}
         ec2_vpc_subnet:
             vpc_id: "{{vpcout.vpc.id}}"
             cidr: "{{PrivSub3Cidr}}"
