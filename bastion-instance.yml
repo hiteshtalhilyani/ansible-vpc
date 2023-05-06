@@ -37,7 +37,7 @@
             from_port: 22
             to_port: 22
             cidr_ip: "{{MYIP}}"
-              rule_desc: allow port 22 from my Laptop
+            rule_desc: allow port 22 from my Laptop
         register: BastionSG_out
 
       - name: Create Bastion Host in Public Subnet
