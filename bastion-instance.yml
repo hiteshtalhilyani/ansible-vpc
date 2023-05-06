@@ -23,21 +23,22 @@
       - name: Save private key  in ppk format
         copy:
                 content: "{{bastion_keyout.key.private_key}}"
-                dest: ./bastion_privkey.pem
-                when: bastion_keyout.changed
+                dest: "./bastion-key.ppk"
+                mode: 0600
+        when: bastion_keyout.changed
 
       - name: Create Security Group 
         ec2_security_group:
-          name: "{{ bastion_sg }}"
-          description: sg with rule descriptions
-          vpc_id: "{{vpcid}}"
-          region: "{{region}}"
-          rules:
-          - proto: tcp
-            from_port: 22
-            to_port: 22
-            cidr_ip: "{{MYIP}}"
-            rule_desc: allow port 22 from my Laptop
+                name: "{{ bastion_sg }}"
+                description: bastion host SG
+                vpc_id: "{{vpcid}}"
+                region: "{{region}}"
+                rules:
+                - proto: tcp
+                  from_port: 22
+                  to_port: 22
+                  cidr_ip: "{{MYIP}}"
+                  rule_desc: allow port 22 from my Laptop
         register: BastionSG_out
 
       - name: Create Bastion Host in Public Subnet
