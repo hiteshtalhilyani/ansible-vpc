@@ -14,7 +14,7 @@
         ec2_key:
                 name: bastion_keypair
                 region: ap-south-1
-          register: bastion_keyout
+        register: bastion_keyout
       
       - name: View Private key
         debug: 
