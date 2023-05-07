@@ -220,7 +220,7 @@
 
     - name: Copy Login Key to provision-stack directory
       copy: 
-            src: webapp-key.ppk
+            src: webapp-key.pem
             dest: provision-stack/webapp-key.pem
             mode: '0400'
 
