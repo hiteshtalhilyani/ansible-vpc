@@ -1,3 +1,8 @@
 *.pem
 *.ppk
+<<<<<<< HEAD
 *.test
+=======
+*.war
+*.sql
+>>>>>>> c5c983cb6dc3deb1737462d6b25218940af09723
