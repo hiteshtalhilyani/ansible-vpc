@@ -19,7 +19,7 @@
     - name: Save Webapp EC2 private key in ppk format
       copy:
               content: "{{webappkey_out.key.private_key}}"
-              dest: "./webapp-key.ppk"
+              dest: "./webapp-key.pem"
               mode: 0600
       when: webappkey_out.changed
 
@@ -222,7 +222,7 @@
     - name: Copy Login Key to provision-stack directory
       copy: 
             src: webapp-key.ppk
-            dest: provision-stack/webapp-key.ppk
+            dest: provision-stack/webapp-key.pem
             mode: '0400'
 
     - name: Insert/Update Inventory file provision-stack/inventory-webapp
@@ -262,9 +262,9 @@
 
             [stack_inst:vars]
             ansible_user:ubuntu
-            ansible_ssh_private_key_file=webapp-key.ppk
+            ansible_ssh_private_key_file=webapp-key.pem
 
-            
+
 
 
 

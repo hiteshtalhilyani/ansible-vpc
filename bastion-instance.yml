@@ -23,7 +23,7 @@
       - name: Save private key  in ppk format
         copy:
                 content: "{{bastion_keyout.key.private_key}}"
-                dest: "./bastion-key.ppk"
+                dest: "./bastion-key.pem"
                 mode: 0600
         when: bastion_keyout.changed
 
