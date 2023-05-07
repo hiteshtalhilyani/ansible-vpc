@@ -23,7 +23,6 @@
               mode: 0600
       when: webappkey_out.changed
 
-
     - name: Create Load Balancer Security Group 
       ec2_group:
               name: webappstack-lb
