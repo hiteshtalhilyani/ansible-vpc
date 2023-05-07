@@ -16,12 +16,12 @@
               region: "{{region}}"
       register: webappkey_out
 
-    # - name: Save Webapp EC2 private key in pem format
-    #   copy:
-    #           content: "{{webappkey_out.key.private_key}}"
-    #           dest: "./webapp-key.pem"
-    #           mode: 0600
-    #   when: webappkey_out.changed
+    - name: Save Webapp EC2 private key in pem format
+      copy:
+              content: "{{webappkey_out.key.private_key}}"
+              dest: "./webapp-key.pem"
+              mode: 0600
+      when: webappkey_out.changed
 
     - name: Create Load Balancer Security Group 
       ec2_group:
