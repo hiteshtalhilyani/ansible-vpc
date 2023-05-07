@@ -21,11 +21,11 @@
       register: git_status
 
     - name: mvn install command to build artifact
-      command: "mvn install"
-      argv: 
-        chdir: webapp-repo
-        when: git_status.changed
-      register: mvn_info
+      shell: mvn install
+      args:
+       chdir: ./webapp-repo
+      when: git_status.changed
+      register: mvn_info         
 
     - name: Copy Artifacts  to files directory
       copy: 
