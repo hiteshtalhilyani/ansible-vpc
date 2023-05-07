@@ -16,7 +16,7 @@
               region: "{{region}}"
       register: webappkey_out
 
-    - name: Save Webapp EC2 private key in ppk format
+    - name: Save Webapp EC2 private key in pem format
       copy:
               content: "{{webappkey_out.key.private_key}}"
               dest: "./webapp-key.pem"
