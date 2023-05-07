@@ -23,8 +23,8 @@
       tags:
         - deploy
 
-    handlers: 
-      - name: Restart mysql
-        service: 
-          name: mysql
-          state: restarted
+  handlers: 
+    - name: Restart mysql
+      service: 
+        name: mysql
+        state: restarted
