@@ -22,7 +22,7 @@
 
     - name: mvn install command to build artifact
       command: "mvn install"
-      args: 
+      argv: 
         chdir: webapp-repo
         when: git_status.changed
       register: mvn_info
